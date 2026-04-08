@@ -677,16 +677,14 @@
       morphEl.src = heroLogoEl.src;
       morphEl.alt = '';
       morphEl.setAttribute('aria-hidden', 'true');
-      morphEl.style.cssText = 'position:fixed;z-index:1001;pointer-events:none;width:auto;object-fit:contain;top:0;left:0;will-change:transform,height,opacity;';
+      /* display:none iniziale — evita flash del clone a top:0 left:0
+         prima che venga posizionato correttamente */
+      morphEl.style.cssText = 'position:fixed;z-index:1001;pointer-events:none;width:auto;object-fit:contain;top:0;left:0;display:none;will-change:transform,height,opacity;';
       document.body.appendChild(morphEl);
-
-      heroLogoEl.style.opacity      = '0';
-      navLogoEl.style.opacity       = '0';
-      navLogoEl.style.pointerEvents = 'none';
-      navEl.style.setProperty('--nav-logo-col', '0px');
 
       var heroAbsTop = 0, heroLeft = 0, heroHeight = 0;
       var navTop = 0, navLeft = 0, navHeight = 0;
+      var morphReady = false;
 
       function cacheRects() {
         navEl.style.setProperty('--nav-logo-col', '76px');
@@ -704,6 +702,7 @@
 
       var morphTick = false;
       function updateMorph() {
+        if (!morphReady) { morphTick = false; return; }
         var scrollY = window.scrollY;
         var raw = Math.min(scrollY / 220, 1);
         if (raw >= 1) {
@@ -738,8 +737,25 @@
         }, 80);
       });
 
-      cacheRects();
-      updateMorph();
+      /* Attiva il morph solo dopo che heroLogoEl è caricato — garantisce
+         che getBoundingClientRect() rifletta la larghezza intrinseca reale
+         dell'immagine, non 0px (elemento senza dimensioni intrinseche). */
+      function activateMorph() {
+        heroLogoEl.style.opacity      = '0';
+        navLogoEl.style.opacity       = '0';
+        navLogoEl.style.pointerEvents = 'none';
+        navEl.style.setProperty('--nav-logo-col', '0px');
+        cacheRects();
+        morphReady = true;
+        updateMorph();
+      }
+
+      if (heroLogoEl.complete && heroLogoEl.naturalWidth > 0) {
+        activateMorph();
+      } else {
+        heroLogoEl.addEventListener('load', activateMorph);
+        heroLogoEl.addEventListener('error', activateMorph); /* fallback: attiva comunque */
+      }
     }
 
   })();
