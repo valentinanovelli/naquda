@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prodotti - Naquda Pesaro</title>
+  <meta name="description" content="Scopri la selezione di mobili, tessili, tavola, bagno, profumatori e oggettistica di Naquda a Pesaro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="naquda.css?v=4">
+  <link rel="stylesheet" href="naquda-light.css">
+  <style>
+    .cat-row-body h2 {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      font-size: clamp(2.4rem, 4vw, 5rem);
+    }
+    .cat-showcase { position: relative; }
+    .cat-row {
+      position: sticky;
+      top: 60px;
+      background: var(--bg-page, rgb(248,237,227));
+      border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 32px rgba(20,13,9,0.08);
+      z-index: 1;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .cat-row:nth-child(1) { z-index: 1; }
+    .cat-row:nth-child(2) { z-index: 2; }
+    .cat-row:nth-child(3) { z-index: 3; }
+    .cat-row:nth-child(4) { z-index: 4; }
+    .cat-row:nth-child(5) { z-index: 5; }
+    .cat-row:nth-child(6) { z-index: 6; }
+    .cat-row-body {
+      background: rgb(20,13,9) !important;
+    }
+    .cat-row-body h2 { color: rgb(248,237,227) !important; }
+    .cat-row-body p  { color: rgba(248,237,227,0.65) !important; }
+    .cat-tag {
+      background: rgba(248,237,227,0.07) !important;
+      border-color: rgba(248,237,227,0.14) !important;
+      color: rgba(248,237,227,0.65) !important;
+    }
+    .btn-outline {
+      color: rgb(248,237,227) !important;
+      border-color: rgba(248,237,227,0.28) !important;
+    }
+    .btn-outline:hover {
+      border-color: rgba(248,237,227,0.7) !important;
+      background: rgba(248,237,227,0.06) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <div class="nav-wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="prodotti.html" class="active">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+        </ul>
+      </div>
+      <a href="Naquda.html" class="nav-logo">
+        <img src="NAQUDA_logo.png" alt="Naquda">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+
+        <button class="nav-hamburger" id="hamburger" aria-label="Apri menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="prodotti.html" class="active">Prodotti</a>
+    <a href="promozioni.html">Promozioni</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="nav-mobile-cta">Vieni a trovarci</a>
+  </div>
+
+  <!-- ═══ PAGE HERO ═══ -->
+  <section class="page-hero" data-cursor="SCOPRI · SCOPRI · SCOPRI ·" data-cursor-dark="true" style="height: 22vh; min-height: 120px;">
+    <div class="page-hero-bg">
+      <img src="vJzsJOlbUK8qkA5xxZA18jSC6SI.jpeg" alt="I nostri prodotti">
+    </div>
+    <div class="page-hero-overlay"></div>
+  </section>
+
+  <!-- ═══ INTRO ═══ -->
+  <section class="prodotti-intro">
+    <div class="prodotti-intro-inner">
+      <span class="section-label reveal">Come funziona</span>
+      <div class="page-word-title reveal d1">
+        <span class="page-word-fill" style="background-image: url('vJzsJOlbUK8qkA5xxZA18jSC6SI.jpeg');">VETRINA</span>
+      </div>
+      <p class="reveal d2">
+        Sfoglia le categorie, scegli quello che ti interessa e contattaci: spediamo in tutta Italia. Vieni a trovarci a Pesaro o inviaci una richiesta tramite il form nella sezione Contatti.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ CATEGORIA: MOBILI ═══ -->
+  <section class="cat-showcase" data-cursor="SFOGLIA · SFOGLIA · SFOGLIA ·">
+    <div class="cat-showcase-inner">
+
+      <!-- Mobili -->
+      <div class="cat-row reveal" id="cat-mobili">
+        <div class="cat-row-img">
+          <a href="mobili.html"><img src="nYgQL26JA1Ioq4xVHJRlasIEC6Y.jpeg" alt="Mobili Naquda"></a>
+        </div>
+        <div class="cat-row-body">
+          <span class="section-label">01</span>
+          <h2>Mobili</h2>
+          <p>
+            Divani, letti, tavoli da pranzo, librerie, sedie e pezzi unici da collezione. Selezioniamo marchi italiani e internazionali per proporti un arredamento che dura nel tempo, senza essere banale.
+          </p>
+          <div class="cat-items-list">
+            <span class="cat-tag">Divani e poltrone</span>
+            <span class="cat-tag">Tavoli</span>
+            <span class="cat-tag">Letti</span>
+            <span class="cat-tag">Librerie</span>
+            <span class="cat-tag">Sedie e sgabelli</span>
+            <span class="cat-tag">Madie e credenze</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="mobili.html" class="btn-outline">Scopri i mobili</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tavola -->
+      <div class="cat-row reverse reveal" id="cat-tavola">
+        <div class="cat-row-img">
+          <a href="tavola.html"><img src="aqfXMublrraihocca3U6iDYHyc.jpeg" alt="Tavola Naquda"></a>
+        </div>
+        <div class="cat-row-body">
+          <span class="section-label">02</span>
+          <h2>Tavola</h2>
+          <p>
+            Apparecchiare la tavola è un gesto di cura. Trovi da noi una selezione di piatti, bicchieri, posate, tovaglie, runner e tutto il necessario per rendere ogni pasto un momento speciale, dal quotidiano al grande evento.
+          </p>
+          <div class="cat-items-list">
+            <span class="cat-tag">Piatti e servizi</span>
+            <span class="cat-tag">Bicchieri</span>
+            <span class="cat-tag">Posate</span>
+            <span class="cat-tag">Tovaglie e runner</span>
+            <span class="cat-tag">Sottopiatti</span>
+            <span class="cat-tag">Centrotavola</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="tavola.html" class="btn-outline">Scopri la tavola</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tessili -->
+      <div class="cat-row reveal" id="cat-tessili">
+        <div class="cat-row-img">
+          <a href="tessili.html"><img src="PzGfS0tMVPZZc0jcqD3wHEmmQI.jpeg" alt="Tessili per la casa Naquda"></a>
+        </div>
+        <div class="cat-row-body">
+          <span class="section-label">03</span>
+          <h2>Tessili per la casa</h2>
+          <p>
+            Cuscini, tende, tappeti, coperte, plaid e biancheria da letto. I tessuti sono l'anima visibile di una casa: cambiano la luce, il calore, l'atmosfera di un ambiente senza spostare un solo mobile.
+          </p>
+          <div class="cat-items-list">
+            <span class="cat-tag">Cuscini</span>
+            <span class="cat-tag">Tende</span>
+            <span class="cat-tag">Tappeti</span>
+            <span class="cat-tag">Coperte e plaid</span>
+            <span class="cat-tag">Biancheria da letto</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="tessili.html" class="btn-outline">Scopri i tessili</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bagno -->
+      <div class="cat-row reverse reveal" id="cat-bagno">
+        <div class="cat-row-img">
+          <a href="bagno.html"><img src="rZjzFX7RCkgqdY9yyhbi4hs.jpeg" alt="Bagno Naquda"></a>
+        </div>
+        <div class="cat-row-body">
+          <span class="section-label">04</span>
+          <h2>Bagno</h2>
+          <p>
+            Il bagno merita la stessa attenzione degli altri ambienti. Teli, accappatoi, accessori e complementi per trasformare la routine mattutina in un piccolo rituale di benessere.
+          </p>
+          <div class="cat-items-list">
+            <span class="cat-tag">Teli da bagno</span>
+            <span class="cat-tag">Accappatoi</span>
+            <span class="cat-tag">Tappeti da bagno</span>
+            <span class="cat-tag">Accessori</span>
+            <span class="cat-tag">Porta sapone e dispenser</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="bagno.html" class="btn-outline">Scopri il bagno</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profumatori & Candele -->
+      <div class="cat-row reveal" id="cat-fragranze">
+        <div class="cat-row-img">
+          <a href="fragranze.html"><img src="AkcINRgdRJWagCIMhlfAa6SCpcs.jpeg" alt="Profumatori e candele Naquda"></a>
+        </div>
+        <div class="cat-row-body">
+          <span class="section-label">05</span>
+          <h2>Profumatori & Candele</h2>
+          <p>
+            Il profumo è il dettaglio che ricordi di una casa. Selezioniamo diffusori, candele profumate e spray per ambienti di brand italiani e internazionali con cui trasformare l'atmosfera di ogni stanza.
+          </p>
+          <div class="cat-items-list">
+            <span class="cat-tag">Diffusori a bastoncini</span>
+            <span class="cat-tag">Candele profumate</span>
+            <span class="cat-tag">Spray per ambienti</span>
+            <span class="cat-tag">Brucia essenze</span>
+            <span class="cat-tag">Fragranze d'autore</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="fragranze.html" class="btn-outline">Scopri le fragranze</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Oggettistica -->
+      <div class="cat-row reverse reveal" id="cat-oggettistica">
+        <div class="cat-row-img">
+          <a href="oggettistica.html"><img src="KdQ95Q3pfhLOIwVe9qSUBK1fk.jpeg" alt="Oggettistica Naquda"></a>
+        </div>
+        <div class="cat-row-body">
+          <span class="section-label">06</span>
+          <h2>Oggettistica & Decorazione</h2>
+          <p>
+            I pezzi che fanno la differenza: vasi, cornici, specchi, sculture, porta candele e complementi decorativi. Perfetti per arricchire uno spazio già arredato o come idea regalo di qualità.
+          </p>
+          <div class="cat-items-list">
+            <span class="cat-tag">Vasi e anfore</span>
+            <span class="cat-tag">Cornici</span>
+            <span class="cat-tag">Specchi decorativi</span>
+            <span class="cat-tag">Sculture e statue</span>
+            <span class="cat-tag">Porta candele</span>
+            <span class="cat-tag">Idee regalo</span>
+          </div>
+          <div style="margin-top: 6px;">
+            <a href="oggettistica.html" class="btn-outline">Scopri l'oggettistica</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA FINALE ═══ -->
+  <section class="hours-strip" data-cursor="CONTATTACI · CONTATTACI ·">
+    <div class="hours-strip-inner">
+      <div>
+        <span class="section-label reveal" style="color: var(--brown);">Due negozi a Pesaro</span>
+        <h2 class="section-title on-cream reveal d1">Nessuna foto rende giustizia a un tessuto toccato con mano</h2>
+        <p class="reveal d2" style="margin-top: 14px; font-size: 0.925rem; color: rgba(30,22,18,0.62); line-height: 1.75;">
+          Vieni a scoprire i nostri prodotti di persona, oppure contattaci: spediamo in tutta Italia.
+        </p>
+        <div class="reveal d3" style="margin-top: 24px;">
+          <a href="contatti.html" class="btn-primary">
+            Indicazioni e orari
+            <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="reveal d1">
+        <table class="hours-table">
+          <tbody>
+            <tr><td>Lunedì</td><td>16:00 – 19:30</td></tr>
+            <tr><td>Martedì</td><td>09:00 – 12:30 · 16:00 – 19:30</td></tr>
+            <tr><td>Mercoledì</td><td>09:00 – 12:30 · 16:00 – 19:30</td></tr>
+            <tr><td>Giovedì</td><td>09:00 – 12:30 · 16:00 – 19:30</td></tr>
+            <tr><td>Venerdì</td><td>09:00 – 12:30 · 16:00 – 19:30</td></tr>
+            <tr><td>Sabato</td><td>09:00 – 12:30 · 16:00 – 19:30</td></tr>
+            <tr class="closed"><td>Domenica</td><td>Chiuso</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Naquda.html" class="footer-logo"><img src="NAQUDA_logo.png" alt="Naquda"></a>
+        <p class="footer-tagline">Arredamento, tessili, oggettistica e profumatori a Pesaro.</p>
+        <div class="footer-addresses">
+          <p class="footer-addr">Via Rossini 29, 61121 Pesaro (PU)</p>
+          <p class="footer-addr">Via Santa Maria delle Fabbrecce 161, Pesaro</p>
+        </div>
+        <a href="tel:+0721279801" class="footer-phone-link">+0721279801</a>
+        <a href="mailto:naquda@libero.it" class="footer-phone-link">naquda@libero.it</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="Naquda.html">Home</a></li>
+          <li><a href="prodotti.html">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/naquda_/">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Pinterest</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Altro</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Note Legali</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Naquda. Tutti i diritti riservati.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Cookie</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor" aria-hidden="true">
+    <svg width="80" height="80" viewBox="0 0 80 80">
+      <defs>
+        <path id="cursor-ring-path" d="M40,40 m-26,0 a26,26 0 1,1 52,0 a26,26 0 1,1 -52,0"/>
+      </defs>
+      <g id="cursor-ring">
+        <g id="cursor-text-wrap">
+          <text id="cursor-ring-text" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="rgba(20,13,9,0.70)">
+            <textPath href="#cursor-ring-path" id="cursor-textpath" textLength="163" lengthAdjust="spacing">SFOGLIA · SFOGLIA · SFOGLIA ·</textPath>
+          </text>
+        </g>
+      </g>
+      <circle cx="40" cy="40" r="4" id="cursor-dot" fill="rgb(110,52,38)"/>
+    </svg>
+  </div>
+
+  <script src="naquda.js"></script>
+  <script src="naquda-cursor.js?v=4"></script>
+</body>
+</html>

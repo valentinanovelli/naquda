@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobili - Naquda Pesaro</title>
+  <meta name="description" content="Scopri la selezione di mobili da Naquda a Pesaro: divani, poltrone, tavoli, letti, librerie, sedie e molto altro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="naquda.css?v=4">
+  <link rel="stylesheet" href="naquda-light.css">
+  <style>
+    .cat-page-hero {
+      padding: 140px 48px 80px;
+      text-align: center;
+      background: var(--bg-page, rgb(248,237,227));
+    }
+    .cat-page-hero .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: var(--on-65, rgba(30,22,18,0.65));
+      margin-bottom: 24px; text-decoration: none;
+    }
+    .cat-page-hero .back-link:hover { color: var(--brown, rgb(110,52,38)); }
+    .cat-page-hero h1 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: 400; letter-spacing: -0.04em;
+      color: var(--on, rgb(30,22,18));
+      margin-bottom: 16px;
+    }
+    .cat-page-hero p {
+      font-size: 1.1rem; color: var(--on-65, rgba(30,22,18,0.65));
+      max-width: 560px; margin: 0 auto; line-height: 1.7;
+    }
+    .cat-subcategories {
+      padding: 64px 48px 96px;
+      background: var(--bg-alt, rgb(239,229,216));
+    }
+    .cat-subcategories-inner {
+      max-width: 900px; margin: 0 auto;
+    }
+    .cat-subcategories-inner .section-label { margin-bottom: 32px; display: block; }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0 48px;
+    }
+    .product-card {
+      background: var(--bg-card, rgb(255,252,248));
+      border: 1px solid rgba(30,22,18,0.08);
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(20,13,9,0.10);
+    }
+    .product-card-icon {
+      width: 48px; height: 48px;
+      color: rgb(110,52,38);
+    }
+    .product-card h3 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--on, rgb(30,22,18));
+    }
+    .product-card p {
+      font-size: 0.875rem;
+      color: var(--on-65, rgba(30,22,18,0.65));
+      line-height: 1.65;
+      flex: 1;
+    }
+    .product-card .btn-outline {
+      align-self: flex-start;
+      font-size: 0.8rem;
+      padding: 9px 18px;
+    }
+    .cat-cta-block {
+      margin-top: 48px;
+      padding: 40px;
+      background: var(--bg-card, rgb(255,252,248));
+      border-radius: 16px;
+      border: 1px solid rgba(30,22,18,0.08);
+      text-align: center;
+    }
+    .cat-cta-block h2 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      font-weight: 400; letter-spacing: -0.03em;
+      color: var(--on, rgb(30,22,18));
+      margin-bottom: 12px;
+    }
+    .cat-cta-block p {
+      color: var(--on-65, rgba(30,22,18,0.65));
+      margin-bottom: 24px; line-height: 1.7;
+    }
+    .cat-cta-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+    @media (max-width: 768px) {
+      .cat-page-hero { padding: 120px 24px 60px; }
+      .cat-subcategories { padding: 48px 24px 72px; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="prodotti.html" class="active">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+        </ul>
+      </div>
+      <a href="Naquda.html" class="nav-logo">
+        <img src="NAQUDA_logo.png" alt="Naquda">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+
+        <button class="nav-hamburger" id="hamburger" aria-label="Apri menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="prodotti.html" class="active">Prodotti</a>
+    <a href="promozioni.html">Promozioni</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="nav-mobile-cta">Vieni a trovarci</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="cat-page-hero">
+    <a href="prodotti.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Torna ai prodotti
+    </a>
+    <span class="section-label" style="justify-content: center; display: flex;">01</span>
+    <h1>Mobili</h1>
+    <p>Divani, letti, tavoli, librerie, sedie e pezzi unici da collezione. Una selezione di marchi italiani e internazionali per un arredamento che dura nel tempo.</p>
+    <nav class="cat-sidenav">
+      <a href="mobili.html" class="active">Mobili</a>
+      <a href="tavola.html">Tavola</a>
+      <a href="tessili.html">Tessili</a>
+      <a href="bagno.html">Bagno</a>
+      <a href="fragranze.html">Fragranze</a>
+      <a href="oggettistica.html">Oggettistica</a>
+    </nav>
+  </section>
+
+  <!-- SUBCATEGORIES -->
+  <section class="cat-subcategories" data-cursor="SFOGLIA · SFOGLIA · SFOGLIA ·">
+    <div class="cat-subcategories-inner">
+      <span class="section-label reveal">Cosa trovi</span>
+      <div class="products-grid reveal d1">
+        <div class="product-card">
+          <svg class="product-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 30h36M6 30V18a2 2 0 012-2h28a2 2 0 012 2v12M6 30v4M42 30v4M10 16v-4a2 2 0 012-2h24a2 2 0 012 2v4"/>
+          </svg>
+          <h3>Divani e poltrone</h3>
+          <p>Divani a 2, 3 e 4 posti, chaise longue, poltrone di design e relax.</p>
+          <a href="contatti.html" class="btn-outline">Chiedi informazioni</a>
+        </div>
+        <div class="product-card">
+          <svg class="product-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="18" width="36" height="16" rx="2"/>
+            <path d="M10 34v4M38 34v4M6 24h36"/>
+          </svg>
+          <h3>Tavoli</h3>
+          <p>Tavoli da pranzo in legno, ceramica, marmo e metallo. Da 4 a 12 posti.</p>
+          <a href="contatti.html" class="btn-outline">Chiedi informazioni</a>
+        </div>
+        <div class="product-card">
+          <svg class="product-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="24" width="36" height="14" rx="2"/>
+            <path d="M6 30h36M10 24v-8a2 2 0 012-2h24a2 2 0 012 2v8M10 38v4M38 38v4"/>
+          </svg>
+          <h3>Letti</h3>
+          <p>Letti matrimoniali e singoli, con contenitore o a doghe, con testiera imbottita o in legno.</p>
+          <a href="contatti.html" class="btn-outline">Chiedi informazioni</a>
+        </div>
+        <div class="product-card">
+          <svg class="product-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="6" width="32" height="36" rx="2"/>
+            <path d="M8 18h32M8 30h32"/>
+          </svg>
+          <h3>Librerie</h3>
+          <p>Librerie a parete, scaffali modulari e sistemi contenitore in legno e laccato.</p>
+          <a href="contatti.html" class="btn-outline">Chiedi informazioni</a>
+        </div>
+        <div class="product-card">
+          <svg class="product-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 42V20a2 2 0 012-2h12a2 2 0 012 2v22M12 42h24"/>
+            <path d="M20 18v-6a4 4 0 014-4 4 4 0 014 4v6"/>
+          </svg>
+          <h3>Sedie e sgabelli</h3>
+          <p>Sedie da pranzo, sgabelli da bar e da cucina, in tessuto, pelle e legno.</p>
+          <a href="contatti.html" class="btn-outline">Chiedi informazioni</a>
+        </div>
+        <div class="product-card">
+          <svg class="product-card-icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="6" y="16" width="36" height="26" rx="2"/>
+            <path d="M6 28h36M18 28v14M30 28v14"/>
+          </svg>
+          <h3>Madie e credenze</h3>
+          <p>Madie basse, credenze alte e buffet per sala da pranzo e soggiorno.</p>
+          <a href="contatti.html" class="btn-outline">Chiedi informazioni</a>
+        </div>
+      </div>
+
+      <div class="cat-cta-block reveal d2">
+        <h2>Vieni a vederli di persona</h2>
+        <p>Nessuna foto rende giustizia ai materiali, ai colori, alla qualità che si tocca con mano. Passa da noi a Pesaro.</p>
+        <div class="cat-cta-buttons">
+          <a href="contatti.html" class="btn-primary">Indicazioni e orari <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="prodotti.html" class="btn-outline">Tutti i prodotti</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Naquda.html" class="footer-logo"><img src="NAQUDA_logo.png" alt="Naquda"></a>
+        <p class="footer-tagline">Arredamento, tessili, oggettistica e profumatori a Pesaro.</p>
+        <div class="footer-addresses">
+          <p class="footer-addr">Via Rossini 29, 61121 Pesaro (PU)</p>
+          <p class="footer-addr">Via Santa Maria delle Fabbrecce 161, Pesaro</p>
+        </div>
+        <a href="tel:+0721279801" class="footer-phone-link">+0721279801</a>
+        <a href="mailto:naquda@libero.it" class="footer-phone-link">naquda@libero.it</a>
+      </div>
+      <div class="footer-col">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="Naquda.html">Home</a></li>
+          <li><a href="prodotti.html">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/naquda_/">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Pinterest</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Altro</h4>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Note Legali</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Naquda. Tutti i diritti riservati.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Cookie</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CUSTOM CURSOR -->
+  <div id="cursor" aria-hidden="true">
+    <svg width="80" height="80" viewBox="0 0 80 80">
+      <defs>
+        <path id="cursor-ring-path" d="M40,40 m-26,0 a26,26 0 1,1 52,0 a26,26 0 1,1 -52,0"/>
+      </defs>
+      <g id="cursor-ring">
+        <g id="cursor-text-wrap">
+          <text id="cursor-ring-text" font-family="Archivo,sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="rgba(20,13,9,0.70)">
+            <textPath href="#cursor-ring-path" id="cursor-textpath" textLength="163" lengthAdjust="spacing">SFOGLIA · SFOGLIA · SFOGLIA ·</textPath>
+          </text>
+        </g>
+      </g>
+      <circle cx="40" cy="40" r="4" id="cursor-dot" fill="rgb(110,52,38)"/>
+    </svg>
+  </div>
+
+  <script src="naquda.js"></script>
+  <script src="naquda-cursor.js?v=4"></script>
+</body>
+</html>

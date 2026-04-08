@@ -1,0 +1,225 @@
+/* ════════════════════════════════════════════════
+   NAQUDA — Light Mode Override
+   Si carica DOPO naquda.css e ribalta il color scheme:
+   background chiaro · titoli e testi scuri
+   ════════════════════════════════════════════════ */
+
+/* ── Token ── */
+:root {
+  --bg-page:    rgb(248, 237, 227);
+  --bg-alt:     rgb(239, 229, 216);
+  --bg-card:    rgb(255, 252, 248);
+  --on:         rgb(30, 22, 18);
+  --on-65:      rgba(30, 22, 18, 0.65);
+  --on-45:      rgba(30, 22, 18, 0.45);
+  --on-12:      rgba(30, 22, 18, 0.12);
+  --on-07:      rgba(30, 22, 18, 0.07);
+}
+
+/* ── Base ── */
+body {
+  background: var(--bg-page);
+  color: var(--on);
+}
+
+/* ── Nav pill: vetro chiaro ── */
+.nav {
+  background: rgba(248, 237, 227, 0.82);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border-color: rgba(30, 22, 18, 0.10);
+}
+.nav.scrolled {
+  background: rgba(248, 237, 227, 0.97);
+  border-color: rgba(30, 22, 18, 0.08);
+  box-shadow: 0 8px 32px rgba(110, 52, 38, 0.13);
+}
+.nav-logo::before {
+  content: none;
+}
+.nav-sep { background: rgba(30, 22, 18, 0.12); }
+.nav-links li a { color: var(--on); }
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--on);
+  background: var(--on-07);
+}
+.nav-hamburger span { background: var(--on); }
+
+/* ── Mobile menu ── */
+.nav-mobile {
+  background: rgba(248, 237, 227, 0.98);
+  backdrop-filter: blur(24px);
+}
+.nav-mobile a { color: var(--on); }
+.nav-mobile a:hover { color: var(--brown); }
+
+/* ── Typography ── */
+.section-title { color: var(--on); }
+.section-body  { color: var(--on-65); }
+
+/* ── Btn outline (adattato al fondo chiaro) ── */
+.btn-outline {
+  color: var(--on);
+  border-color: rgba(30, 22, 18, 0.28);
+}
+.btn-outline:hover {
+  border-color: rgba(30, 22, 18, 0.60);
+  background: rgba(30, 22, 18, 0.05);
+  transform: translateY(-2px);
+}
+
+/* ════════════════════════════════════
+   HOMEPAGE — Naquda.html
+   ════════════════════════════════════ */
+
+/* Store intro */
+.store-intro { background: var(--bg-page); }
+.store-intro-text .section-title { color: var(--on); }
+.store-intro-text p { color: var(--on-65); }
+.store-intro-text blockquote {
+  color: var(--on-65);
+  border-left-color: var(--brown);
+}
+.stat strong { color: var(--on); }
+.stat span   { color: var(--on-65); }
+
+/* News / blog */
+.news-section { background: var(--bg-alt); }
+.news-card {
+  background: var(--bg-card);
+  border-color: rgba(30, 22, 18, 0.08);
+  box-shadow: none;
+}
+.news-card:hover {
+  box-shadow: 0 20px 40px rgba(110, 52, 38, 0.14);
+}
+.news-title   { color: var(--on); }
+.news-excerpt { color: var(--on-65); }
+.news-read    { color: var(--on); }
+.news-card:hover .news-read { color: var(--brown); }
+
+/* ════════════════════════════════════
+   PRODOTTI PAGE
+   ════════════════════════════════════ */
+.prodotti-intro { background: var(--bg-page); }
+.prodotti-intro-inner .section-title { color: var(--on); }
+.prodotti-intro-inner p { color: var(--on-65); }
+
+.cat-showcase { background: var(--bg-page); }
+.cat-row-body {
+  background: var(--bg-alt);
+}
+.cat-row-body h2 { color: var(--on); }
+.cat-row-body p  { color: var(--on-65); }
+.cat-tag {
+  color: var(--on-65);
+  background: rgba(30, 22, 18, 0.05);
+  border-color: rgba(30, 22, 18, 0.12);
+}
+
+/* CTA prodotti */
+.prodotti-cta { background: var(--bg-alt); }
+.prodotti-cta .section-title { color: var(--on); }
+.prodotti-cta p { color: var(--on-65); }
+
+/* ════════════════════════════════════
+   PROMOZIONI PAGE
+   ════════════════════════════════════ */
+.promo-intro { background: var(--bg-page); }
+.promo-intro-inner .section-title { color: var(--on); }
+.promo-intro-inner p { color: var(--on-65); }
+
+.promo-grid-section { background: var(--bg-page); }
+
+.promo-label-row::after { background: var(--on-12); }
+
+.promo-card {
+  background: var(--bg-card);
+  border-color: rgba(30, 22, 18, 0.08);
+}
+.promo-card:hover {
+  box-shadow: 0 20px 48px rgba(110, 52, 38, 0.16);
+}
+.promo-name  { color: var(--on); }
+.promo-desc  { color: var(--on-65); }
+.promo-cta-link { color: var(--on); }
+.promo-card:hover .promo-cta-link { color: var(--brown); }
+.promo-empty       { color: var(--on-65); }
+.promo-empty strong { color: var(--on); }
+
+/* ════════════════════════════════════
+   CONTATTI PAGE
+   ════════════════════════════════════ */
+.contatti-grid { background: var(--bg-page); }
+
+.location-card {
+  background: var(--bg-card);
+  border-color: rgba(30, 22, 18, 0.09);
+}
+.location-name    { color: var(--on); }
+.location-address { color: var(--on-65); }
+.location-hours-mini {
+  color: var(--on-45);
+  border-top-color: rgba(30, 22, 18, 0.08);
+}
+.location-map-link { color: var(--on-65); }
+.location-map-link:hover { color: var(--on); }
+
+/* Sezione mappe (era dark con var inline) */
+#mappe,
+[id="mappe"] {
+  background: var(--bg-alt) !important;
+}
+#mappe > div,
+[id="mappe"] > div {
+  background: var(--bg-card) !important;
+  border-color: rgba(30, 22, 18, 0.08) !important;
+}
+#mappe strong,
+[id="mappe"] strong { color: var(--on) !important; }
+#mappe p,
+[id="mappe"] p      { color: var(--on-65) !important; }
+
+/* Sezione mappa */
+.map-section { background: var(--bg-alt); }
+.map-section .section-label { color: var(--brown); }
+.map-placeholder {
+  background: var(--bg-card);
+  border-top: 1px solid rgba(30, 22, 18, 0.08);
+}
+.map-placeholder p { color: var(--on-65); }
+.map-placeholder strong { color: var(--on); }
+
+/* Contact form */
+.contact-form-section { background: var(--bg-page); }
+.contact-form-inner .section-title { color: var(--on); }
+.contact-form-inner > p { color: var(--on-65); }
+.form-field {
+  background: rgba(30, 22, 18, 0.04);
+  border-color: rgba(30, 22, 18, 0.12);
+  color: var(--on);
+}
+.form-field:focus {
+  border-color: rgba(110, 52, 38, 0.5);
+  background: rgba(30, 22, 18, 0.06);
+}
+.form-field::placeholder { color: rgba(30, 22, 18, 0.32); }
+
+/* ════════════════════════════════════
+   SEZIONI GIÀ CHIARE — differenziazione
+   (hours-strip, orari-section, categorie)
+   ════════════════════════════════════ */
+
+/* hours-strip era già cream — la scuriamo leggermente per differenziarla */
+.hours-strip  { background: var(--bg-alt); }
+.orari-section { background: var(--bg-alt); }
+
+/* categories-section era già cream — ok, ma il titolo on-cream serve dark */
+.categories-section { background: var(--bg-page); }
+.categories-header .section-title { color: var(--on); }
+
+/* ════════════════════════════════════
+   FOOTER — resta scuro (voluto)
+   ════════════════════════════════════ */
+/* Nessun override: il footer mantiene il look dark originale */
