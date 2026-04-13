@@ -691,7 +691,6 @@
         heroLogoEl.style.opacity      = String(+(1 - p).toFixed(3));
         navLogoEl.style.opacity       = String(+p.toFixed(3));
         navLogoEl.style.pointerEvents = (raw >= 1) ? '' : 'none';
-        navEl.style.setProperty('--nav-logo-col', (p * 76).toFixed(1) + 'px');
         setHeroActions(raw >= 0.65);
         mobileTick = false;
       }

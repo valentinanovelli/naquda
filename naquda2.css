@@ -1095,6 +1095,13 @@ section { padding: 96px 48px; }
   line-height: 1.65;
   padding-left: 12px;
   border-left: 2px solid rgba(184, 99, 60, 0.55);
+  text-decoration: none;
+  display: block;
+}
+.location-address:hover {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .location-phone {
   display: inline-flex;
@@ -1238,6 +1245,13 @@ textarea.form-field { resize: vertical; }
   font-size: 0.78rem;
   color: rgba(248,237,227,0.55);
   line-height: 1.55;
+  text-decoration: none;
+  display: block;
+}
+.footer-addr:hover {
+  color: rgba(248,237,227,0.85);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer-store-phone {
   font-size: 0.82rem;
@@ -1334,10 +1348,7 @@ textarea.form-field { resize: vertical; }
     -webkit-backdrop-filter: blur(14px) saturate(140%);
   }
   .nav-right { justify-content: flex-end; }
-  .nav-hamburger {
-    transform: translateX(calc(var(--nav-logo-col, 76px) * 0.658 - 50px));
-    transition: transform 0.35s ease;
-  }
+  /* L'hamburger rimane fisso a destra — nessun transform dinamico */
   /* Su mobile l'animazione navLogoIn interferisce con il fade JS:
      se l'utente scrolla mentre l'animazione è ancora in corso (scale 0.92→1)
      il logo entra con uno scatto. Disabilitiamo l'animazione e la transizione
