@@ -47,36 +47,36 @@
   </div>
 
   <style>
-    /* ── Hero logo ── */
+    /* ── Hero logo: scala con la viewport, mai troppo piccolo né troppo grande ── */
     .hero-logo-large {
-      height: clamp(7rem, 11vw, 13rem);
+      height: clamp(10rem, 20vw, 28rem);
+      max-height: 40vh;
       width: auto;
-      max-width: min(90vw, 480px);
+      max-width: min(90vw, 600px);
       object-fit: contain;
       display: block;
       transform-origin: bottom center;
-      margin-bottom: 0;
     }
 
-    /* ── Hero layout: logo+titolo in alto, bottoni in fondo ── */
-    .hero::before { flex: 0 0 0 !important; }
-    .hero::after  { flex: 0 0 0 !important; }
+    /* ── Desktop: tutto raggruppato e centrato verticalmente ── */
     .hero-content {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 110px;
-      padding-bottom: 52px;
-      flex: 1;
+      padding: 0 48px;
+      gap: clamp(1.2rem, 2.5vh, 3rem);
     }
-    .hero-title { margin-top: 0; font-size: clamp(2.2rem, 4vw, 4.5rem); }
-    .hero-actions { margin-top: auto; padding-top: 32px; justify-content: center; }
+    .hero-title { font-size: clamp(2.4rem, 4.5vw, 5.5rem); }
+    .hero-actions { justify-content: center; }
 
     /* ── Mobile: logo+titolo centrati verticalmente, bottoni in fondo ── */
     @media (max-width: 768px) {
+      .hero::before { flex: 0 0 0 !important; }
+      .hero::after  { flex: 0 0 0 !important; }
       .hero-logo-large {
         height: 72vw;
+        max-height: none;
         max-width: 88vw;
         margin-top: auto;
       }
@@ -86,7 +86,11 @@
         letter-spacing: -0.04em !important;
         margin-bottom: auto !important;
       }
-      .hero-content { padding: 80px 16px 48px !important; }
+      .hero-content {
+        padding: 80px 16px 48px !important;
+        gap: 0 !important;
+        flex: 1 !important;
+      }
       .hero-actions { margin-top: 0 !important; padding-top: 0 !important; }
     }
 
