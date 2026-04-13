@@ -47,18 +47,18 @@
   </div>
 
   <style>
-    /* ── Hero logo desktop ── */
+    /* ── Hero logo ── */
     .hero-logo-large {
-      height: clamp(13rem, 28vw, 32rem);
+      height: clamp(7rem, 11vw, 13rem);
       width: auto;
-      max-width: min(90vw, 640px);
+      max-width: min(90vw, 480px);
       object-fit: contain;
       display: block;
       transform-origin: bottom center;
       margin-bottom: 0;
     }
 
-    /* ── Hero layout desktop: logo+titolo in alto, bottoni in fondo ── */
+    /* ── Hero layout: logo+titolo in alto, bottoni in fondo ── */
     .hero::before { flex: 0 0 0 !important; }
     .hero::after  { flex: 0 0 0 !important; }
     .hero-content {
@@ -70,8 +70,8 @@
       padding-bottom: 52px;
       flex: 1;
     }
-    .hero-title { margin-top: 0; }
-    .hero-actions { margin-top: auto; padding-top: 32px; }
+    .hero-title { margin-top: 0; font-size: clamp(2.2rem, 4vw, 4.5rem); }
+    .hero-actions { margin-top: auto; padding-top: 32px; justify-content: center; }
 
     /* ── Mobile: logo+titolo centrati verticalmente, bottoni in fondo ── */
     @media (max-width: 768px) {
@@ -691,6 +691,7 @@
         heroLogoEl.style.opacity      = String(+(1 - p).toFixed(3));
         navLogoEl.style.opacity       = String(+p.toFixed(3));
         navLogoEl.style.pointerEvents = (raw >= 1) ? '' : 'none';
+        navEl.style.setProperty('--nav-logo-col', (p * 76).toFixed(1) + 'px');
         setHeroActions(raw >= 0.65);
         mobileTick = false;
       }

@@ -1338,6 +1338,16 @@ textarea.form-field { resize: vertical; }
     transform: translateX(calc(var(--nav-logo-col, 76px) * 0.658 - 50px));
     transition: transform 0.35s ease;
   }
+  /* Su mobile l'animazione navLogoIn interferisce con il fade JS:
+     se l'utente scrolla mentre l'animazione è ancora in corso (scale 0.92→1)
+     il logo entra con uno scatto. Disabilitiamo l'animazione e la transizione
+     aggiuntiva sul parent — il fade è già gestito da JS con easing. */
+  .nav-logo { transition: none !important; }
+  .nav-logo img {
+    animation: none !important;
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 @media (max-width: 768px) {
   section { padding: 64px 24px; }
