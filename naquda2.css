@@ -606,7 +606,7 @@ section { padding: 96px 48px; }
   text-align: center;
   align-items: center;
 }
-.promo-teaser-inner .section-title { color: var(--cream); width: 100%; overflow: hidden; }
+.promo-teaser-inner .section-title { color: var(--cream); width: max-content; max-width: 90vw; overflow: visible; margin: 0 auto; }
 .promo-teaser-inner p { font-size: 1rem; color: var(--cream70); line-height: 1.7; }
 
 /* News / Blog */
