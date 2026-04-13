@@ -20,8 +20,6 @@
     cursorEl.style.display = 'block';
     cursorEl.style.transform = 'translate3d(-200px,-200px,0)';
 
-    // Default: dark text for light backgrounds
-    // Sections with data-cursor-dark="true" get light text
     var FILL_DARK  = 'rgba(20,13,9,0.80)';
     var FILL_LIGHT = 'rgba(248,237,227,0.92)';
     if (ringTextEl) ringTextEl.setAttribute('fill', FILL_DARK);
@@ -35,27 +33,32 @@
     var lastRaf = 0;
     var moved = false;
 
+    /* RAF loop — si ferma quando il cursore ha raggiunto il target
+       (evita 60 write/s continui anche quando il cursore è fermo) */
     function tick() {
       lastRaf = Date.now();
-      cx += (tx - cx) * 0.14;
-      cy += (ty - cy) * 0.14;
-      cursorEl.style.transform = 'translate3d(' + (cx - 40) + 'px,' + (cy - 40) + 'px,0)';
+      var dx = tx - cx;
+      var dy = ty - cy;
+      if (Math.abs(dx) < 0.4 && Math.abs(dy) < 0.4) {
+        cx = tx; cy = ty;
+        rafId = null; // ferma il loop — ripartirà al prossimo mousemove
+        return;
+      }
+      cx += dx * 0.14;
+      cy += dy * 0.14;
+      cursorEl.style.transform = 'translate3d(' + (cx - 40).toFixed(1) + 'px,' + (cy - 40).toFixed(1) + 'px,0)';
       rafId = requestAnimationFrame(tick);
     }
 
+    /* startRaf senza forced reflow — il ring CSS animation gira autonomamente */
     function startRaf() {
       if (rafId) cancelAnimationFrame(rafId);
-      if (ringEl) {
-        ringEl.style.animation = 'none';
-        void ringEl.offsetWidth;
-        ringEl.style.animation = '';
-      }
       rafId = requestAnimationFrame(tick);
     }
 
-    // Watchdog: restart RAF if frozen
+    // Watchdog: riavvia RAF se bloccato (tab switch, ecc.)
     setInterval(function() {
-      if (Date.now() - lastRaf > 1000 && moved) startRaf();
+      if (Date.now() - lastRaf > 1000 && moved && !rafId) startRaf();
     }, 500);
 
     function setCursorText(text) {
@@ -77,8 +80,8 @@
 
     document.addEventListener('mousemove', function(e) {
       tx = e.clientX; ty = e.clientY;
-      if (!moved) { moved = true; cx = tx; cy = ty; startRaf(); }
-      if (Date.now() - lastRaf > 300) startRaf();
+      if (!moved) { moved = true; cx = tx; cy = ty; startRaf(); return; }
+      if (!rafId) startRaf(); // riavvia se il loop si era fermato per convergenza
 
       var text = null;
       var isDark = false;
@@ -94,15 +97,13 @@
       setCursorColor(isDark);
     }, { passive: true });
 
-    // Cursor re-appears immediately on click (when window regains focus)
     document.addEventListener('mousedown', function(e) {
       tx = e.clientX; ty = e.clientY;
       cx = tx; cy = ty;
       if (!moved) { moved = true; startRaf(); }
-      else if (Date.now() - lastRaf > 200) startRaf();
+      else if (!rafId) startRaf();
     });
 
-    // Re-entry into the page from outside browser window
     document.documentElement.addEventListener('mouseenter', function(e) {
       if (e.clientX !== undefined) {
         tx = e.clientX; ty = e.clientY;
@@ -118,7 +119,7 @@
     });
 
     document.addEventListener('visibilitychange', function() {
-      if (!document.hidden && moved) { startRaf(); }
+      if (!document.hidden && moved && !rafId) startRaf();
     });
     window.addEventListener('pageshow', function(e) {
       if (e.persisted && moved) { cx = tx; cy = ty; startRaf(); }

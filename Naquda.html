@@ -732,17 +732,24 @@
       var morphReady = false;
 
       function cacheRects() {
+        /* Lettura batch prima delle scritture — evita layout thrashing.
+           1) Leggiamo hero rect (non dipende da --nav-logo-col)
+           2) Scriviamo col=76px per misurare il nav logo nella posizione finale
+           3) Leggiamo nav rect
+           4) Ripristiniamo col al valore corrente */
+        var hR = heroLogoEl.getBoundingClientRect();
+        heroAbsTop = hR.top + window.scrollY;
+        heroLeft   = hR.left;
+        heroHeight = hR.height;
+
         navEl.style.setProperty('--nav-logo-col', '76px');
         var nR = navLogoImgEl.getBoundingClientRect();
         navTop    = nR.top;
         navLeft   = nR.left;
         navHeight = nR.height;
+
         var raw = Math.min(Math.max(0, (window.scrollY - 30) / 290), 1);
         navEl.style.setProperty('--nav-logo-col', (raw >= 1 ? 76 : ease(raw) * 76) + 'px');
-        var hR = heroLogoEl.getBoundingClientRect();
-        heroAbsTop = hR.top + window.scrollY;
-        heroLeft   = hR.left;
-        heroHeight = hR.height;
       }
 
       var morphTick = false;
