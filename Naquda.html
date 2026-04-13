@@ -47,48 +47,52 @@
   </div>
 
   <style>
-    /* ── Hero logo (prima riga del titolo) ── */
+    /* ── Hero logo desktop ── */
     .hero-logo-large {
-      height: clamp(10rem, 24vw, 26rem);
+      height: clamp(13rem, 28vw, 32rem);
       width: auto;
-      max-width: min(88vw, 560px);
+      max-width: min(90vw, 640px);
       object-fit: contain;
       display: block;
       transform-origin: bottom center;
       margin-bottom: 0;
     }
-    .hero-logo-large { margin-bottom: 0; }
-    .hero-title { margin-top: 0; }
-    @media (max-width: 768px) {
-      .hero-logo-large {
-        height: clamp(9rem, 40vw, 15rem);
-        max-width: min(90vw, 460px);
-      }
-    }
-    @media (max-width: 480px) {
-      .hero-logo-large {
-        height: clamp(8rem, 44vw, 13rem);
-        max-width: 88vw;
-      }
-    }
 
-    /* ── Hero: contenuto vicino alla navbar, spazio sotto ── */
-    .hero { align-items: center; }
+    /* ── Hero layout desktop: logo+titolo in alto, bottoni in fondo ── */
+    .hero { align-items: stretch; }
     .hero::before { flex: 0 0 0 !important; }
-    .hero::after  { flex: 1 0 0 !important; }
+    .hero::after  { flex: 0 0 0 !important; }
     .hero-content {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-top: 90px;
-      padding-bottom: 0;
+      padding-top: 110px;
+      padding-bottom: 52px;
+      flex: 1;
+    }
+    .hero-title { margin-top: 0; }
+    .hero-actions { margin-top: auto; padding-top: 32px; }
+
+    /* ── Mobile: logo+titolo centrati verticalmente, bottoni in fondo ── */
+    @media (max-width: 768px) {
+      .hero-logo-large {
+        height: 72vw;
+        max-width: 88vw;
+        margin-top: auto;
+      }
+      .hero-title {
+        font-size: 13vw !important;
+        white-space: nowrap !important;
+        letter-spacing: -0.04em !important;
+        margin-bottom: auto !important;
+      }
+      .hero-content { padding: 80px 16px 48px !important; }
+      .hero-actions { margin-top: 0 !important; padding-top: 0 !important; }
     }
 
     /* ── Overlay bilanciato — immagine visibile ── */
-    .hero-overlay {
-      background: rgba(248,237,227,0.38);
-    }
+    .hero-overlay { background: rgba(248,237,227,0.38); }
     .hero-title   { color: rgba(20,13,9,0.82); font-weight: 300; letter-spacing: -0.05em; }
     .hero-title em { color: rgba(20,13,9,0.52); }
     .hero-eyebrow  { color: rgba(20,13,9,0.52); border-color: rgba(20,13,9,0.14); }
@@ -109,7 +113,7 @@
       <h1 class="hero-title reveal d1">
         La casa, oggi.
       </h1>
-      <div class="hero-actions reveal d2">
+      <div class="hero-actions">
         <a href="prodotti.html" class="btn-primary">
           Scopri i prodotti
           <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -639,8 +643,26 @@
     var navLogoEl    = document.querySelector('.nav-logo');
     var navLogoImgEl = navLogoEl ? navLogoEl.querySelector('img') : null;
     var navEl        = document.getElementById('nav');
+    var heroActionsEl = document.querySelector('.hero-actions');
+    var hamburgerEl   = document.getElementById('hamburger');
 
     if (!heroLogoEl || !navLogoEl || !navLogoImgEl || !navEl) return;
+
+    /* Bottoni: nascosti inizialmente, appaiono/scompaiono con lo scroll */
+    var actionsShown = false;
+    if (heroActionsEl) {
+      heroActionsEl.style.opacity = '0';
+      heroActionsEl.style.transform = 'translateY(18px)';
+      heroActionsEl.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      heroActionsEl.style.pointerEvents = 'none';
+    }
+    function setHeroActions(show) {
+      if (!heroActionsEl || show === actionsShown) return;
+      actionsShown = show;
+      heroActionsEl.style.opacity = show ? '1' : '0';
+      heroActionsEl.style.transform = show ? 'translateY(0)' : 'translateY(18px)';
+      heroActionsEl.style.pointerEvents = show ? '' : 'none';
+    }
 
     function lerp(a, b, t) { return a + (b - a) * t; }
     function ease(t) { return t < 0.5 ? 4*t*t*t : 1 - Math.pow(-2*t+2, 3)/2; }
@@ -665,11 +687,12 @@
          barra indirizzi del browser. */
       var mobileTick = false;
       function updateFade() {
-        var raw = Math.min(window.scrollY / 220, 1);
+        var raw = Math.min(Math.max(0, (window.scrollY - 30) / 290), 1);
         var p   = ease(raw);
         heroLogoEl.style.opacity      = String(+(1 - p).toFixed(3));
         navLogoEl.style.opacity       = String(+p.toFixed(3));
         navLogoEl.style.pointerEvents = (raw >= 1) ? '' : 'none';
+        setHeroActions(raw >= 0.65);
         mobileTick = false;
       }
       window.addEventListener('scroll', function() {
@@ -700,7 +723,7 @@
         navTop    = nR.top;
         navLeft   = nR.left;
         navHeight = nR.height;
-        var raw = Math.min(window.scrollY / 220, 1);
+        var raw = Math.min(Math.max(0, (window.scrollY - 30) / 290), 1);
         navEl.style.setProperty('--nav-logo-col', (raw >= 1 ? 76 : ease(raw) * 76) + 'px');
         var hR = heroLogoEl.getBoundingClientRect();
         heroAbsTop = hR.top + window.scrollY;
@@ -712,14 +735,16 @@
       function updateMorph() {
         if (!morphReady) { morphTick = false; return; }
         var scrollY = window.scrollY;
-        var raw = Math.min(scrollY / 220, 1);
+        var raw = Math.min(Math.max(0, (scrollY - 30) / 290), 1);
         if (raw >= 1) {
           morphEl.style.display = 'none';
           navLogoEl.style.opacity = '1';
           navLogoEl.style.pointerEvents = '';
           navEl.style.setProperty('--nav-logo-col', '76px');
+          setHeroActions(true);
           morphTick = false; return;
         }
+        setHeroActions(raw >= 0.65);
         var p = ease(raw);
         navEl.style.setProperty('--nav-logo-col', (p * 76) + 'px');
         var hTop = heroAbsTop - scrollY;

@@ -125,15 +125,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: block;
   object-fit: contain;
   flex-shrink: 0;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.4s ease;
-  animation: navLogoIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  transition: transform 0.25s ease, opacity 0.4s ease;
+  animation: navLogoIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @keyframes navLogoIn {
-  from { opacity: 0; transform: scale(0.88); }
+  from { opacity: 0; transform: scale(0.92); }
   to   { opacity: 1; transform: scale(1); }
 }
 .nav-logo:hover img {
-  transform: scale(1.28);
+  transform: scale(1.12) !important;
 }
 .nav-links {
   display: flex;
@@ -825,7 +825,7 @@ section { padding: 96px 48px; }
   font-size: clamp(1.6rem, 3vw, 2.5rem);
 }
 .prodotti-intro-inner p {
-  font-size: 0.975rem;
+  font-size: 0.85rem;
   line-height: 1.75;
   color: var(--cream70);
   text-align: center;
@@ -925,7 +925,7 @@ section { padding: 96px 48px; }
   align-items: center;
   gap: 16px;
 }
-.promo-intro-inner p { font-size: 0.975rem; line-height: 1.75; color: var(--cream70); }
+.promo-intro-inner p { font-size: 0.85rem; line-height: 1.75; color: var(--cream70); }
 
 .promo-grid-section {
   background: var(--dark);
@@ -1334,6 +1334,10 @@ textarea.form-field { resize: vertical; }
     -webkit-backdrop-filter: blur(14px) saturate(140%);
   }
   .nav-right { justify-content: flex-end; }
+  .nav-hamburger {
+    transform: translateX(calc(var(--nav-logo-col, 76px) * 0.658 - 50px));
+    transition: transform 0.35s ease;
+  }
 }
 @media (max-width: 768px) {
   section { padding: 64px 24px; }
@@ -1371,8 +1375,8 @@ textarea.form-field { resize: vertical; }
   .hours-table td { font-size: 0.78rem; padding: 10px 0; }
   .hours-table td:last-child { font-size: 0.72rem; }
   .footer-logo img { height: 56px; }
-  /* page-word-fill overflow fix */
-  .page-word-fill { font-size: clamp(28px, 9.5vw, 60px); }
+  /* page-word-fill mobile: più grande */
+  .page-word-fill { font-size: clamp(52px, 14vw, 100px); }
   /* promo teaser: titolo > paragrafo */
   .promo-teaser-inner .section-title { white-space: normal; font-size: clamp(1.8rem, 8vw, 3rem); }
   .promo-teaser-inner p { font-size: 0.85rem; }
@@ -1428,8 +1432,6 @@ textarea.form-field { resize: vertical; }
 #cursor-ring { transform-origin: 40px 40px; animation: cursor-spin 6s linear infinite; }
 #cursor-ring-text {
   transition: fill 0.3s ease;
-  /* Dark outline makes text readable on any background */
-  filter: drop-shadow(0 0 1.5px rgba(0,0,0,0.65)) drop-shadow(0 0 1px rgba(0,0,0,0.5));
 }
 #cursor-dot { transition: r 0.2s ease; transform-origin: 40px 40px; shape-rendering: geometricPrecision; }
 #cursor-text-wrap { opacity: 1; transition: opacity 0.25s ease; }

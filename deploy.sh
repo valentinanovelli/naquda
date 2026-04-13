@@ -12,5 +12,8 @@ git commit -m "$MSG"
 git push
 
 echo ""
-echo "✓ Deploy avviato — Cloudflare aggiornerà il sito in ~30s"
-echo "  https://dash.cloudflare.com → Workers & Pages → naquda"
+echo "Deploying to Cloudflare Pages..."
+npx wrangler pages deploy . --project-name=naquda --branch=main --commit-dirty=true
+
+echo ""
+echo "✓ Deploy completato — https://naquda.pages.dev"
