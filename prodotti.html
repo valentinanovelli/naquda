@@ -39,8 +39,9 @@
     .cat-row:nth-child(4) { z-index: 4; }
     .cat-row:nth-child(5) { z-index: 5; }
     .cat-row:nth-child(6) { z-index: 6; }
+    .desc-short { display: none; }
     @media (max-width: 768px) {
-      .cat-row { top: 106px; height: 370px; }
+      .cat-row { top: 106px; height: 430px; }
       .cat-row-img {
         position: absolute !important;
         inset: 0;
@@ -62,15 +63,13 @@
         margin: 0 !important;
       }
       .cat-row-body p {
-        display: -webkit-box !important;
-        -webkit-line-clamp: 1 !important;
-        -webkit-box-orient: vertical !important;
-        overflow: hidden !important;
         font-size: 0.75rem !important;
         color: rgba(248,237,227,0.6) !important;
-        margin: 0 !important;
+        margin: 0 0 8px 0 !important;
         line-height: 1.4 !important;
       }
+      .desc-full { display: none !important; }
+      .desc-short { display: inline !important; }
       .cat-items-list {
         display: flex !important;
         flex-wrap: wrap !important;
@@ -177,7 +176,8 @@
           <span class="section-label">01</span>
           <h2>Mobili</h2>
           <p>
-            Divani, letti, tavoli da pranzo, librerie, sedie e pezzi unici da collezione. Selezioniamo marchi italiani e internazionali per proporti un arredamento che dura nel tempo, senza essere banale.
+            <span class="desc-full">Divani, letti, tavoli da pranzo, librerie, sedie e pezzi unici da collezione. Selezioniamo marchi italiani e internazionali per proporti un arredamento che dura nel tempo, senza essere banale.</span>
+            <span class="desc-short">Divani, letti, tavoli e pezzi di design italiani e internazionali.</span>
           </p>
           <div class="cat-items-list">
             <span class="cat-tag">Divani e poltrone</span>
@@ -202,7 +202,8 @@
           <span class="section-label">02</span>
           <h2>Tavola</h2>
           <p>
-            Apparecchiare la tavola è un gesto di cura. Trovi da noi una selezione di piatti, bicchieri, posate, tovaglie, runner e tutto il necessario per rendere ogni pasto un momento speciale, dal quotidiano al grande evento.
+            <span class="desc-full">Apparecchiare la tavola è un gesto di cura. Trovi da noi una selezione di piatti, bicchieri, posate, tovaglie, runner e tutto il necessario per rendere ogni pasto un momento speciale, dal quotidiano al grande evento.</span>
+            <span class="desc-short">Piatti, bicchieri, posate, tovaglie e tutto per apparecchiare con cura.</span>
           </p>
           <div class="cat-items-list">
             <span class="cat-tag">Piatti e servizi</span>
@@ -227,7 +228,8 @@
           <span class="section-label">03</span>
           <h2>Tessili per la casa</h2>
           <p>
-            Cuscini, tende, tappeti, coperte, plaid e biancheria da letto. I tessuti sono l'anima visibile di una casa: cambiano la luce, il calore, l'atmosfera di un ambiente senza spostare un solo mobile.
+            <span class="desc-full">Cuscini, tende, tappeti, coperte, plaid e biancheria da letto. I tessuti sono l'anima visibile di una casa: cambiano la luce, il calore, l'atmosfera di un ambiente senza spostare un solo mobile.</span>
+            <span class="desc-short">Cuscini, tende, tappeti e biancheria per cambiare l'atmosfera di casa.</span>
           </p>
           <div class="cat-items-list">
             <span class="cat-tag">Cuscini</span>
@@ -251,7 +253,8 @@
           <span class="section-label">04</span>
           <h2>Bagno</h2>
           <p>
-            Il bagno merita la stessa attenzione degli altri ambienti. Teli, accappatoi, accessori e complementi per trasformare la routine mattutina in un piccolo rituale di benessere.
+            <span class="desc-full">Il bagno merita la stessa attenzione degli altri ambienti. Teli, accappatoi, accessori e complementi per trasformare la routine mattutina in un piccolo rituale di benessere.</span>
+            <span class="desc-short">Teli, accappatoi e accessori per trasformare la routine in un rituale.</span>
           </p>
           <div class="cat-items-list">
             <span class="cat-tag">Teli da bagno</span>
@@ -275,7 +278,8 @@
           <span class="section-label">05</span>
           <h2>Profumatori & Candele</h2>
           <p>
-            Il profumo è il dettaglio che ricordi di una casa. Selezioniamo diffusori, candele profumate e spray per ambienti di brand italiani e internazionali con cui trasformare l'atmosfera di ogni stanza.
+            <span class="desc-full">Il profumo è il dettaglio che ricordi di una casa. Selezioniamo diffusori, candele profumate e spray per ambienti di brand italiani e internazionali con cui trasformare l'atmosfera di ogni stanza.</span>
+            <span class="desc-short">Diffusori, candele e spray per ambienti di brand selezionati.</span>
           </p>
           <div class="cat-items-list">
             <span class="cat-tag">Diffusori a bastoncini</span>
@@ -299,7 +303,8 @@
           <span class="section-label">06</span>
           <h2>Oggettistica & Decorazione</h2>
           <p>
-            I pezzi che fanno la differenza: vasi, cornici, specchi, sculture, porta candele e complementi decorativi. Perfetti per arricchire uno spazio già arredato o come idea regalo di qualità.
+            <span class="desc-full">I pezzi che fanno la differenza: vasi, cornici, specchi, sculture, porta candele e complementi decorativi. Perfetti per arricchire uno spazio già arredato o come idea regalo di qualità.</span>
+            <span class="desc-short">Vasi, cornici, specchi e complementi per arricchire ogni spazio.</span>
           </p>
           <div class="cat-items-list">
             <span class="cat-tag">Vasi e anfore</span>
