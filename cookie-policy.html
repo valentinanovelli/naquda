@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy - Naquda Pesaro</title>
+  <meta name="description" content="Cookie Policy del sito Naquda, negozio di arredamento e oggettistica a Pesaro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="naquda.css?v=4">
+  <link rel="stylesheet" href="naquda-light.css?v=4">
+  <style>
+    .policy-hero {
+      padding: 140px 48px 64px;
+      background: var(--bg-page, rgb(248,237,227));
+    }
+    .policy-hero .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: var(--on-65, rgba(30,22,18,0.65));
+      margin-bottom: 24px; text-decoration: none;
+    }
+    .policy-hero .back-link:hover { color: var(--brown, rgb(110,52,38)); }
+    .policy-hero h1 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 400; letter-spacing: -0.04em;
+      color: var(--on, rgb(30,22,18));
+      margin-bottom: 12px;
+    }
+    .policy-hero p {
+      font-size: 0.9rem;
+      color: var(--on-65, rgba(30,22,18,0.65));
+    }
+    .policy-body {
+      padding: 64px 48px 96px;
+      background: var(--bg-alt, rgb(239,229,216));
+    }
+    .policy-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .policy-section h2 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--on, rgb(30,22,18));
+      margin-bottom: 14px;
+    }
+    .policy-section p,
+    .policy-section li {
+      font-size: 0.9rem;
+      color: var(--on-65, rgba(30,22,18,0.72));
+      line-height: 1.8;
+    }
+    .policy-section ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .policy-section p + p { margin-top: 10px; }
+    .policy-section a {
+      color: var(--brown, rgb(110,52,38));
+      text-decoration: underline;
+    }
+    .notice-box {
+      background: var(--bg-card, rgb(255,252,248));
+      border: 1px solid rgba(30,22,18,0.08);
+      border-radius: 12px;
+      padding: 24px 28px;
+    }
+    .notice-box p {
+      font-size: 0.9rem;
+      color: var(--on-65, rgba(30,22,18,0.72));
+      line-height: 1.8;
+    }
+    @media (max-width: 768px) {
+      .policy-hero { padding: 120px 24px 48px; }
+      .policy-body { padding: 48px 24px 72px; }
+    }
+    @media (max-width: 480px) {
+      .policy-hero h1 { font-size: clamp(1.8rem, 10vw, 3rem); }
+      .policy-inner { gap: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="prodotti.html">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+        </ul>
+      </div>
+      <a href="Naquda.html" class="nav-logo">
+        <img src="NAQUDA_logo.png" alt="Naquda">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+        <button class="nav-hamburger" id="hamburger" aria-label="Apri menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="prodotti.html">Prodotti</a>
+    <a href="promozioni.html">Promozioni</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="nav-mobile-cta">Vieni a trovarci</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="policy-hero">
+    <a href="Naquda.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Torna alla home
+    </a>
+    <h1>Cookie Policy</h1>
+    <p>Ultimo aggiornamento: <span id="policy-date"></span></p>
+    <script>
+      var d = new Date();
+      document.getElementById('policy-date').textContent = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+    </script>
+  </section>
+
+  <!-- CORPO -->
+  <section class="policy-body">
+    <div class="policy-inner">
+
+      <div class="notice-box">
+        <p><strong>In breve:</strong> questo sito non utilizza cookie di profilazione, analytics o tracciamento. Non è presente alcun cookie banner perché non ce n'è bisogno.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>1. Cosa sono i cookie</h2>
+        <p>I cookie sono piccoli file di testo che i siti web salvano nel browser dell'utente. Vengono usati per finalità diverse: funzionamento tecnico, preferenze, analisi del traffico, pubblicità.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>2. Cookie utilizzati da questo sito</h2>
+        <p>Questo sito <strong>non imposta cookie</strong> di alcun tipo nel browser del visitatore — né tecnici, né di profilazione, né di analisi.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>3. Archiviazione locale (localStorage)</h2>
+        <p>Il sito utilizza il <strong>localStorage</strong> del browser per salvare gli articoli contrassegnati come preferiti durante la navigazione. Si tratta di un'archiviazione locale al tuo dispositivo: nessun dato viene trasmesso a server esterni. Non è un cookie e non richiede consenso.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>4. Google Fonts</h2>
+        <p>Il sito carica i caratteri tipografici tramite Google Fonts (Google LLC). Questa operazione comporta una richiesta HTTP ai server di Google, che ricevono l'indirizzo IP del visitatore.</p>
+        <p>Google Fonts <strong>non imposta cookie</strong> e non traccia la navigazione sul sito. Il trasferimento verso gli USA avviene nell'ambito del Data Privacy Framework UE-USA.</p>
+        <p>Per maggiori informazioni: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="policy-section">
+        <h2>5. Link a siti terzi</h2>
+        <p>Il sito contiene link a siti esterni (Google Maps, Instagram, Facebook). Questi link aprono pagine di terze parti, che hanno proprie policy sui cookie indipendenti da questa. Non abbiamo controllo sui cookie di quei siti.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>6. Perché non c'è un cookie banner</h2>
+        <p>Il Regolamento ePrivacy (recepito in Italia con il D.Lgs. 69/2012 e aggiornato dalle linee guida del Garante) richiede il consenso solo per cookie e strumenti di tracciamento che non siano strettamente necessari al funzionamento del sito.</p>
+        <p>Poiché questo sito non utilizza cookie né strumenti di tracciamento che richiedono consenso, non è necessario mostrare un banner.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>7. Modifiche a questa policy</h2>
+        <p>Se in futuro venissero introdotti strumenti che richiedono consenso (ad es. Google Analytics, Meta Pixel), questa pagina verrà aggiornata e sarà aggiunto un cookie banner adeguato.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>8. Contatti</h2>
+        <p>Per qualsiasi domanda su questa Cookie Policy: <a href="mailto:naquda@libero.it">naquda@libero.it</a></p>
+        <p>Per il trattamento dei dati personali consulta la <a href="privacy-policy.html">Privacy Policy</a>.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Naquda.html" class="footer-logo"><img src="NAQUDA_logo.png" alt="Naquda"></a>
+        <p class="footer-tagline">Arredamento, tessili, oggettistica<br>e profumatori a Pesaro.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Negozi</h4>
+        <div class="footer-stores">
+          <div class="footer-store">
+            <p class="footer-addr">Via Rossini 29, 61121 Pesaro</p>
+            <a href="tel:+072132344" class="footer-store-phone">+0721 32344</a>
+          </div>
+          <div class="footer-store">
+            <p class="footer-addr">Via S.M. delle Fabbrecce 161, Pesaro</p>
+            <a href="tel:+0721279801" class="footer-store-phone">+0721 279801</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="Naquda.html">Home</a></li>
+          <li><a href="prodotti.html">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/naquda_/">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Naquda. Tutti i diritti riservati.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookie</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="naquda.js?v=4"></script>
+</body>
+</html>

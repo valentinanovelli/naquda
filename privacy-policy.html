@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy - Naquda Pesaro</title>
+  <meta name="description" content="Informativa sul trattamento dei dati personali di Naquda, negozio di arredamento e oggettistica a Pesaro.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="naquda.css?v=4">
+  <link rel="stylesheet" href="naquda-light.css?v=4">
+  <style>
+    .policy-hero {
+      padding: 140px 48px 64px;
+      background: var(--bg-page, rgb(248,237,227));
+    }
+    .policy-hero .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: var(--on-65, rgba(30,22,18,0.65));
+      margin-bottom: 24px; text-decoration: none;
+    }
+    .policy-hero .back-link:hover { color: var(--brown, rgb(110,52,38)); }
+    .policy-hero h1 {
+      font-family: 'Archivo', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 400; letter-spacing: -0.04em;
+      color: var(--on, rgb(30,22,18));
+      margin-bottom: 12px;
+    }
+    .policy-hero p {
+      font-size: 0.9rem;
+      color: var(--on-65, rgba(30,22,18,0.65));
+    }
+    .policy-body {
+      padding: 64px 48px 96px;
+      background: var(--bg-alt, rgb(239,229,216));
+    }
+    .policy-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .policy-section h2 {
+      font-family: 'Archivo', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: var(--on, rgb(30,22,18));
+      margin-bottom: 14px;
+    }
+    .policy-section p,
+    .policy-section li {
+      font-size: 0.9rem;
+      color: var(--on-65, rgba(30,22,18,0.72));
+      line-height: 1.8;
+    }
+    .policy-section ul {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+    .policy-section p + p { margin-top: 10px; }
+    .placeholder {
+      background: rgba(184,99,60,0.12);
+      border-left: 3px solid rgb(184,99,60);
+      padding: 4px 10px;
+      border-radius: 2px;
+      font-style: italic;
+      color: rgb(110,52,38) !important;
+    }
+    .policy-section a {
+      color: var(--brown, rgb(110,52,38));
+      text-decoration: underline;
+    }
+    @media (max-width: 768px) {
+      .policy-hero { padding: 120px 24px 48px; }
+      .policy-body { padding: 48px 24px 72px; }
+    }
+    @media (max-width: 480px) {
+      .policy-hero h1 { font-size: clamp(1.8rem, 10vw, 3rem); }
+      .policy-inner { gap: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <div class="nav-wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-left">
+        <ul class="nav-links">
+          <li><a href="prodotti.html">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+        </ul>
+      </div>
+      <a href="Naquda.html" class="nav-logo">
+        <img src="NAQUDA_logo.png" alt="Naquda">
+      </a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+        <button class="nav-hamburger" id="hamburger" aria-label="Apri menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="nav-mobile" id="mobileMenu">
+    <a href="prodotti.html">Prodotti</a>
+    <a href="promozioni.html">Promozioni</a>
+    <a href="contatti.html">Contatti</a>
+    <a href="contatti.html" class="nav-mobile-cta">Vieni a trovarci</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="policy-hero">
+    <a href="Naquda.html" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M13 8H3M7 4L3 8l4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Torna alla home
+    </a>
+    <h1>Privacy Policy</h1>
+    <p>Ultimo aggiornamento: <span id="policy-date"></span></p>
+    <script>
+      var d = new Date();
+      document.getElementById('policy-date').textContent = d.toLocaleDateString('it-IT', { day: 'numeric', month: 'long', year: 'numeric' });
+    </script>
+  </section>
+
+  <!-- CORPO -->
+  <section class="policy-body">
+    <div class="policy-inner">
+
+      <div class="policy-section">
+        <h2>1. Titolare del trattamento</h2>
+        <p><strong>Naquda S.r.l</strong></p>
+        <p>
+          Via Rossini 29, 61121 Pesaro (PU)<br>
+          Email: <a href="mailto:naquda@libero.it">naquda@libero.it</a>
+        </p>
+      </div>
+
+      <div class="policy-section">
+        <h2>2. Dati raccolti tramite il modulo di contatto</h2>
+        <p>Quando utilizzi il modulo di contatto presente sul sito, raccogliamo i seguenti dati personali: nome, indirizzo email e il contenuto del messaggio.</p>
+        <p><strong>Finalità:</strong> rispondere alla tua richiesta.</p>
+        <p><strong>Base giuridica:</strong> esecuzione di misure precontrattuali su richiesta dell'interessato (art. 6.1.b GDPR).</p>
+        <p><strong>Conservazione:</strong> 12 mesi dalla ricezione.</p>
+        <p>I dati non vengono ceduti a terzi né utilizzati per finalità diverse da quelle indicate.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>3. Google Fonts</h2>
+        <p>Il sito utilizza Google Fonts (Google LLC) per caricare i caratteri tipografici. Quando visiti una pagina, il tuo browser effettua una richiesta ai server di Google, che ricevono l'indirizzo IP del tuo dispositivo.</p>
+        <p>Google Fonts non imposta cookie e non traccia la navigazione. Il trasferimento avviene verso gli USA nell'ambito del Data Privacy Framework UE-USA.</p>
+        <p>Informativa Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></p>
+      </div>
+
+      <div class="policy-section">
+        <h2>4. Hosting</h2>
+        <p>Il sito è ospitato su <strong>Netlify</strong> (Netlify Inc., 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA). Netlify può registrare log tecnici di accesso contenenti indirizzi IP, timestamp e URL richiesti, per finalità di sicurezza e funzionamento del servizio.</p>
+        <p>Netlify aderisce al Data Privacy Framework UE-USA.</p>
+        <p>Informativa Netlify: <a href="https://www.netlify.com/privacy/" target="_blank" rel="noopener">netlify.com/privacy</a></p>
+      </div>
+
+      <div class="policy-section">
+        <h2>5. Cookie e archiviazione locale</h2>
+        <p>Questo sito non utilizza cookie di profilazione o di tracciamento. Per maggiori dettagli consulta la <a href="cookie-policy.html">Cookie Policy</a>.</p>
+      </div>
+
+      <div class="policy-section">
+        <h2>6. I tuoi diritti</h2>
+        <p>In qualità di interessato hai diritto a (artt. 15–22 GDPR):</p>
+        <ul>
+          <li>Accedere ai tuoi dati personali</li>
+          <li>Ottenere la rettifica o la cancellazione</li>
+          <li>Richiedere la limitazione del trattamento</li>
+          <li>Opporti al trattamento</li>
+          <li>Richiedere la portabilità dei dati</li>
+          <li>Proporre reclamo al Garante per la Protezione dei Dati Personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">garanteprivacy.it</a>)</li>
+        </ul>
+        <p style="margin-top:14px;">Per esercitare i tuoi diritti scrivi a: <a href="mailto:naquda@libero.it">naquda@libero.it</a></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="Naquda.html" class="footer-logo"><img src="NAQUDA_logo.png" alt="Naquda"></a>
+        <p class="footer-tagline">Arredamento, tessili, oggettistica<br>e profumatori a Pesaro.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Negozi</h4>
+        <div class="footer-stores">
+          <div class="footer-store">
+            <p class="footer-addr">Via Rossini 29, 61121 Pesaro</p>
+            <a href="tel:+072132344" class="footer-store-phone">+0721 32344</a>
+          </div>
+          <div class="footer-store">
+            <p class="footer-addr">Via S.M. delle Fabbrecce 161, Pesaro</p>
+            <a href="tel:+0721279801" class="footer-store-phone">+0721 279801</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigazione</h4>
+        <ul>
+          <li><a href="Naquda.html">Home</a></li>
+          <li><a href="prodotti.html">Prodotti</a></li>
+          <li><a href="promozioni.html">Promozioni</a></li>
+          <li><a href="novita.html">Novità</a></li>
+          <li><a href="contatti.html">Contatti</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Social</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/naquda_/">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Naquda. Tutti i diritti riservati.</p>
+      <div class="footer-legal">
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookie</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="naquda.js?v=4"></script>
+</body>
+</html>

@@ -19,21 +19,10 @@
     }
     .cat-showcase { position: relative; }
     .cat-row {
-      position: sticky;
-      top: 60px;
-      background: var(--bg-page, rgb(248,237,227));
       border-radius: 20px;
       margin-bottom: 24px;
-      box-shadow: 0 4px 32px rgba(20,13,9,0.08);
-      z-index: 1;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
     }
-    .cat-row:nth-child(1) { z-index: 1; }
-    .cat-row:nth-child(2) { z-index: 2; }
-    .cat-row:nth-child(3) { z-index: 3; }
-    .cat-row:nth-child(4) { z-index: 4; }
-    .cat-row:nth-child(5) { z-index: 5; }
-    .cat-row:nth-child(6) { z-index: 6; }
     .cat-row-body {
       background: rgb(20,13,9) !important;
     }
@@ -301,13 +290,20 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="Naquda.html" class="footer-logo"><img src="NAQUDA_logo.png" alt="Naquda"></a>
-        <p class="footer-tagline">Arredamento, tessili, oggettistica e profumatori a Pesaro.</p>
-        <div class="footer-addresses">
-          <p class="footer-addr">Via Rossini 29, 61121 Pesaro (PU)</p>
-          <p class="footer-addr">Via Santa Maria delle Fabbrecce 161, Pesaro</p>
+        <p class="footer-tagline">Arredamento, tessili, oggettistica<br>e profumatori a Pesaro.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Negozi</h4>
+        <div class="footer-stores">
+          <div class="footer-store">
+            <p class="footer-addr">Via Rossini 29, 61121 Pesaro</p>
+            <a href="tel:+072132344" class="footer-store-phone">+0721 32344</a>
+          </div>
+          <div class="footer-store">
+            <p class="footer-addr">Via S.M. delle Fabbrecce 161, Pesaro</p>
+            <a href="tel:+0721279801" class="footer-store-phone">+0721 279801</a>
+          </div>
         </div>
-        <a href="tel:+0721279801" class="footer-phone-link">+0721279801</a>
-        <a href="mailto:naquda@libero.it" class="footer-phone-link">naquda@libero.it</a>
       </div>
       <div class="footer-col">
         <h4>Navigazione</h4>
@@ -324,23 +320,14 @@
         <ul>
           <li><a href="https://www.instagram.com/naquda_/">Instagram</a></li>
           <li><a href="#">Facebook</a></li>
-          <li><a href="#">Pinterest</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Altro</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-          <li><a href="#">Note Legali</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2025 Naquda. Tutti i diritti riservati.</p>
       <div class="footer-legal">
-        <a href="#">Privacy</a>
-        <a href="#">Cookie</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookie</a>
       </div>
     </div>
   </footer>
@@ -358,7 +345,7 @@
           </text>
         </g>
       </g>
-      <circle cx="40" cy="40" r="4" id="cursor-dot" fill="rgb(110,52,38)"/>
+      <circle cx="40" cy="40" r="4" id="cursor-dot" fill="rgb(110,52,38)" shape-rendering="geometricPrecision"/>
     </svg>
   </div>
 

@@ -39,7 +39,7 @@
       if (firstMove) { cx = tx; cy = ty; firstMove = false; }
       cx += (tx - cx) * 0.15;
       cy += (ty - cy) * 0.15;
-      cursorEl.style.transform = 'translate(' + (cx - 40) + 'px,' + (cy - 40) + 'px)';
+      cursorEl.style.transform = 'translate3d(' + (cx - 40) + 'px,' + (cy - 40) + 'px,0)';
       rafId = requestAnimationFrame(tickCursor);
     }
 

@@ -48,36 +48,39 @@
   <style>
     /* ── Hero logo (prima riga del titolo) ── */
     .hero-logo-large {
-      height: clamp(9rem, 22vw, 22rem);
+      height: clamp(10rem, 24vw, 26rem);
       width: auto;
-      max-width: min(80vw, 480px);
+      max-width: min(88vw, 560px);
       object-fit: contain;
       display: block;
       transform-origin: bottom center;
       margin-bottom: 0;
     }
-    .hero-title { margin-top: 0.1em; }
+    .hero-logo-large { margin-bottom: 0; }
+    .hero-title { margin-top: 0; }
     @media (max-width: 768px) {
       .hero-logo-large {
-        height: clamp(8rem, 36vw, 14rem);
-        max-width: min(88vw, 420px);
+        height: clamp(8rem, 33vw, 13rem);
+        max-width: min(88vw, 440px);
       }
     }
     @media (max-width: 480px) {
       .hero-logo-large {
-        height: clamp(7.5rem, 36vw, 12rem);
-        max-width: 85vw;
+        height: clamp(7rem, 35vw, 11rem);
+        max-width: 86vw;
       }
     }
 
-    /* ── Hero centrato ── */
-    /* align-items: center = centra hero-content orizzontalmente (flex-direction: column) */
+    /* ── Hero: contenuto vicino alla navbar, spazio sotto ── */
     .hero { align-items: center; }
+    .hero::before { flex: 0 0 0 !important; }
+    .hero::after  { flex: 1 0 0 !important; }
     .hero-content {
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-top: 90px;
       padding-bottom: 0;
     }
 
@@ -105,10 +108,7 @@
       <h1 class="hero-title reveal d1">
         La casa, oggi.
       </h1>
-      <p class="hero-subtitle reveal d2">
-        Mobili, tessili, oggettistica, profumatori e tutto ciò che rende una casa un luogo speciale. Vieni a scoprire la nostra selezione.
-      </p>
-      <div class="hero-actions reveal d3">
+      <div class="hero-actions reveal d2">
         <a href="prodotti.html" class="btn-primary">
           Scopri i prodotti
           <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -531,12 +531,18 @@
       <div>
         <span class="section-label reveal">Dove trovarci</span>
         <h2 class="section-title on-cream reveal d1">I nostri negozi a Pesaro</h2>
-        <div class="reveal d2" style="display:flex;flex-direction:column;gap:20px;margin-top:16px;">
-          <p style="font-size:1.05rem;color:rgba(30,22,18,0.75);">Via Rossini 29, 61121 Pesaro (PU)</p>
-          <p style="font-size:1.05rem;color:rgba(30,22,18,0.75);">Via Santa Maria delle Fabbrecce 161, 61121 Pesaro (PU)</p>
+        <div class="reveal d2" style="margin-top:16px;display:flex;flex-direction:column;gap:24px;">
+          <div style="border-left:2px solid rgba(184,99,60,0.55);padding-left:10px;display:flex;flex-direction:column;gap:3px;">
+            <p style="font-size:1.05rem;color:rgba(30,22,18,0.75);">Via Rossini 29, 61121 Pesaro (PU)</p>
+            <a href="tel:+072132344" style="font-size:1rem;color:rgb(110,52,38);font-weight:600;text-decoration:none;">+0721 32344</a>
+          </div>
+          <div style="border-left:2px solid rgba(184,99,60,0.55);padding-left:10px;display:flex;flex-direction:column;gap:3px;">
+            <p style="font-size:1.05rem;color:rgba(30,22,18,0.75);">Via Santa Maria delle Fabbrecce 161, 61121 Pesaro (PU)</p>
+            <a href="tel:+0721279801" style="font-size:1rem;color:rgb(110,52,38);font-weight:600;text-decoration:none;">+0721 279801</a>
+          </div>
         </div>
         <div class="reveal d3" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a href="contatti.html" class="btn-primary">Indicazioni e contatti</a>
+          <a href="contatti.html" class="btn-primary">Indicazioni e contatti <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
       <div class="reveal d1">
@@ -560,13 +566,20 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a href="Naquda.html" class="footer-logo"><img src="NAQUDA_logo.png" alt="Naquda"></a>
-        <p class="footer-tagline">Arredamento, tessili, oggettistica e profumatori a Pesaro.</p>
-        <div class="footer-addresses">
-          <p class="footer-addr">Via Rossini 29, 61121 Pesaro (PU)</p>
-          <p class="footer-addr">Via Santa Maria delle Fabbrecce 161, Pesaro</p>
+        <p class="footer-tagline">Arredamento, tessili, oggettistica<br>e profumatori a Pesaro.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Negozi</h4>
+        <div class="footer-stores">
+          <div class="footer-store">
+            <p class="footer-addr">Via Rossini 29, 61121 Pesaro</p>
+            <a href="tel:+072132344" class="footer-store-phone">+0721 32344</a>
+          </div>
+          <div class="footer-store">
+            <p class="footer-addr">Via S.M. delle Fabbrecce 161, Pesaro</p>
+            <a href="tel:+0721279801" class="footer-store-phone">+0721 279801</a>
+          </div>
         </div>
-        <a href="tel:+0721279801" class="footer-phone-link">+0721279801</a>
-        <a href="mailto:naquda@libero.it" class="footer-phone-link">naquda@libero.it</a>
       </div>
       <div class="footer-col">
         <h4>Navigazione</h4>
@@ -582,23 +595,14 @@
         <ul>
           <li><a href="https://www.instagram.com/naquda_/">Instagram</a></li>
           <li><a href="#">Facebook</a></li>
-          <li><a href="#">Pinterest</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Altro</h4>
-        <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-          <li><a href="#">Note Legali</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2025 Naquda. Tutti i diritti riservati.</p>
       <div class="footer-legal">
-        <a href="#">Privacy</a>
-        <a href="#">Cookie</a>
+        <a href="privacy-policy.html">Privacy</a>
+        <a href="cookie-policy.html">Cookie</a>
       </div>
     </div>
   </footer>
@@ -616,7 +620,7 @@
           </text>
         </g>
       </g>
-      <circle cx="40" cy="40" r="4" id="cursor-dot" fill="rgb(110,52,38)"/>
+      <circle cx="40" cy="40" r="4" id="cursor-dot" fill="rgb(110,52,38)" shape-rendering="geometricPrecision"/>
     </svg>
   </div>
 
