@@ -683,6 +683,17 @@
     navLogoEl.style.opacity       = '0';
     navLogoEl.style.pointerEvents = 'none';
 
+    /* Quando l'animazione navLogoIn finisce, rimuoviamo l'animazione stessa:
+       animation-fill-mode:both lascia transform:scale(1) come stile computato,
+       creando un compositing layer che sfoca il logo su alcuni browser/GPU.
+       Rimuovendo l'animazione dopo la sua esecuzione, il browser torna a
+       renderizzare l'img senza compositing forzato → logo nitido. */
+    navLogoImgEl.addEventListener('animationend', function() {
+      navLogoImgEl.style.animation  = 'none';
+      navLogoImgEl.style.transform  = '';
+      navLogoImgEl.style.opacity    = '';
+    }, { once: true });
+
     if (isMobile) {
       /* ── MOBILE: cross-fade opacity ──────────────────────────────────
          L'hero logo sfuma mentre scorre; il nav logo sfuma nella navbar.
