@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,300;0,400;0,600;0,900;1,300&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="naquda.css?v=4">
-  <link rel="stylesheet" href="naquda-light.css?v=4">
+  <link rel="stylesheet" href="naquda.css?v=5">
+  <link rel="stylesheet" href="naquda-light.css?v=5">
 </head>
 <body>
 
@@ -41,6 +41,7 @@
   <div class="nav-mobile" id="mobileMenu">
     <a href="prodotti.html">Prodotti</a>
     <a href="promozioni.html">Promozioni</a>
+    <a href="novita.html">Novità</a>
     <a href="contatti.html">Contatti</a>
     <a href="contatti.html" class="nav-mobile-cta">Vieni a trovarci</a>
   </div>
@@ -60,14 +61,14 @@
     .hero-title { margin-top: 0; }
     @media (max-width: 768px) {
       .hero-logo-large {
-        height: clamp(8rem, 33vw, 13rem);
-        max-width: min(88vw, 440px);
+        height: clamp(9rem, 40vw, 15rem);
+        max-width: min(90vw, 460px);
       }
     }
     @media (max-width: 480px) {
       .hero-logo-large {
-        height: clamp(7rem, 35vw, 11rem);
-        max-width: 86vw;
+        height: clamp(8rem, 44vw, 13rem);
+        max-width: 88vw;
       }
     }
 
@@ -541,7 +542,7 @@
             <a href="tel:+0721279801" style="font-size:1rem;color:rgb(110,52,38);font-weight:600;text-decoration:none;">+0721 279801</a>
           </div>
         </div>
-        <div class="reveal d3" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+        <div class="hours-cta-desktop reveal d3" style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
           <a href="contatti.html" class="btn-primary">Indicazioni e contatti <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
@@ -557,6 +558,9 @@
             <tr class="closed"><td>Domenica</td><td>Chiuso</td></tr>
           </tbody>
         </table>
+        <div class="hours-cta-mobile" style="display: none; margin-top: 24px; gap: 12px; flex-wrap: wrap;">
+          <a href="contatti.html" class="btn-primary">Indicazioni e contatti <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
     </div>
   </section>
@@ -624,7 +628,7 @@
     </svg>
   </div>
 
-  <script src="naquda.js?v=4"></script>
+  <script src="naquda.js?v=5"></script>
 
   <script>
   (function() {
@@ -764,6 +768,6 @@
 
   })();
   </script>
-  <script src="naquda-cursor.js?v=4"></script>
+  <script src="naquda-cursor.js?v=5"></script>
 </body>
 </html>

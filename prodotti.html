@@ -8,8 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="naquda.css?v=4">
-  <link rel="stylesheet" href="naquda-light.css?v=4">
+  <link rel="stylesheet" href="naquda.css?v=5">
+  <link rel="stylesheet" href="naquda-light.css?v=5">
   <style>
     .cat-row-body h2 {
       font-family: 'Archivo', sans-serif;
@@ -19,9 +19,28 @@
     }
     .cat-showcase { position: relative; }
     .cat-row {
-      border-radius: 20px;
+      position: sticky;
+      top: 68px;
+      height: 480px;
+      min-height: unset;
       margin-bottom: 24px;
+      border-radius: 20px;
       overflow: hidden;
+      box-shadow: 0 4px 32px rgba(20,13,9,0.12);
+    }
+    .cat-row-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cat-row:nth-child(1) { z-index: 1; }
+    .cat-row:nth-child(2) { z-index: 2; }
+    .cat-row:nth-child(3) { z-index: 3; }
+    .cat-row:nth-child(4) { z-index: 4; }
+    .cat-row:nth-child(5) { z-index: 5; }
+    .cat-row:nth-child(6) { z-index: 6; }
+    @media (max-width: 768px) {
+      .cat-row { top: 56px; height: 320px; }
     }
     .cat-row-body {
       background: rgb(20,13,9) !important;
@@ -74,6 +93,7 @@
   <div class="nav-mobile" id="mobileMenu">
     <a href="prodotti.html" class="active">Prodotti</a>
     <a href="promozioni.html">Promozioni</a>
+    <a href="novita.html">Novità</a>
     <a href="contatti.html">Contatti</a>
     <a href="contatti.html" class="nav-mobile-cta">Vieni a trovarci</a>
   </div>
@@ -349,7 +369,7 @@
     </svg>
   </div>
 
-  <script src="naquda.js?v=4"></script>
-  <script src="naquda-cursor.js?v=4"></script>
+  <script src="naquda.js?v=5"></script>
+  <script src="naquda-cursor.js?v=5"></script>
 </body>
 </html>
