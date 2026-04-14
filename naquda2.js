@@ -105,11 +105,49 @@
   /* ── Contact form ── */
   const form = document.getElementById('contactForm');
   if (form) {
-    form.addEventListener('submit', e => {
+    const submitBtn = form.querySelector('[type="submit"]');
+    const origBtnHTML = submitBtn ? submitBtn.innerHTML : '';
+
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      form.style.display = 'none';
-      const success = document.getElementById('formSuccess');
-      if (success) success.style.display = 'block';
+
+      const nome = (form.querySelector('[name="nome"]') || {}).value || '';
+      const email = (form.querySelector('[name="email"]') || {}).value || '';
+      const messaggio = (form.querySelector('[name="messaggio"]') || {}).value || '';
+      if (!nome.trim() || !email.trim() || !messaggio.trim()) return;
+
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Invio in corso…';
+      }
+
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(form)
+        });
+        const json = await res.json();
+        if (json.success) {
+          form.style.display = 'none';
+          const success = document.getElementById('formSuccess');
+          if (success) success.style.display = 'block';
+        } else {
+          throw new Error('submit failed');
+        }
+      } catch (_) {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = origBtnHTML;
+        }
+        let errEl = document.getElementById('formError');
+        if (!errEl) {
+          errEl = document.createElement('p');
+          errEl.id = 'formError';
+          errEl.style.cssText = 'color:var(--brown);font-size:.85rem;margin-top:10px;';
+          form.parentNode.insertBefore(errEl, form.nextSibling);
+        }
+        errEl.textContent = 'Invio non riuscito. Scrivici a naquda@libero.it';
+      }
     });
   }
 })();

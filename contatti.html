@@ -228,12 +228,16 @@
         Hai bisogno di informazioni su un prodotto, vuoi sapere se qualcosa è disponibile o hai una richiesta speciale? Scrivici, ti risponderemo presto.
       </p>
       <form class="contact-form reveal d2" id="contactForm" novalidate>
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="Nuovo messaggio dal sito Naquda">
+        <input type="hidden" name="from_name" value="Sito Naquda">
+        <input type="hidden" name="redirect" value="false">
         <div class="row-2">
-          <input type="text" class="form-field" placeholder="Nome" required>
-          <input type="email" class="form-field" placeholder="Email" required>
+          <input type="text" name="nome" class="form-field" placeholder="Nome" required>
+          <input type="email" name="email" class="form-field" placeholder="Email" required>
         </div>
-        <input type="text" class="form-field" placeholder="Oggetto (es. disponibilità prodotto, orari...)">
-        <textarea class="form-field" rows="5" placeholder="Il tuo messaggio..." required></textarea>
+        <input type="text" name="oggetto" class="form-field" placeholder="Oggetto (es. disponibilità prodotto, orari...)">
+        <textarea name="messaggio" class="form-field" rows="5" placeholder="Il tuo messaggio..." required></textarea>
         <button type="submit" class="btn-primary form-submit">
           Invia messaggio
           <svg class="arrow-icon" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
