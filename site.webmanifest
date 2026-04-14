@@ -1,0 +1,21 @@
+{
+  "name": "Naquda",
+  "short_name": "Naquda",
+  "description": "Arredamento, tessili, oggettistica e profumatori a Pesaro.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F4EF",
+  "theme_color": "#2E2520",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /privacy-policy
+Disallow: /cookie-policy
+
+Sitemap: https://naquda.pages.dev/sitemap.xml
