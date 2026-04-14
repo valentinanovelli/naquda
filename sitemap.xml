@@ -6,52 +6,52 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/prodotti</loc>
+    <loc>https://naquda.pages.dev/prodotti.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/contatti</loc>
+    <loc>https://naquda.pages.dev/contatti.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/promozioni</loc>
+    <loc>https://naquda.pages.dev/promozioni.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/novita</loc>
+    <loc>https://naquda.pages.dev/novita.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/mobili</loc>
+    <loc>https://naquda.pages.dev/mobili.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/tessili</loc>
+    <loc>https://naquda.pages.dev/tessili.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/bagno</loc>
+    <loc>https://naquda.pages.dev/bagno.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/tavola</loc>
+    <loc>https://naquda.pages.dev/tavola.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/fragranze</loc>
+    <loc>https://naquda.pages.dev/fragranze.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://naquda.pages.dev/oggettistica</loc>
+    <loc>https://naquda.pages.dev/oggettistica.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
