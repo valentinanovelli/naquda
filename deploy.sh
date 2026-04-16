@@ -16,4 +16,4 @@ echo "Deploying to Cloudflare Pages..."
 npx wrangler pages deploy . --project-name=naquda --branch=main --commit-dirty=true
 
 echo ""
-echo "✓ Deploy completato — https://naquda.pages.dev"
+echo "✓ Deploy completato — https://arredamentinaquda.com"

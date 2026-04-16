@@ -4,4 +4,4 @@ Allow: /
 Disallow: /privacy-policy
 Disallow: /cookie-policy
 
-Sitemap: https://naquda.pages.dev/sitemap.xml
+Sitemap: https://arredamentinaquda.com/sitemap.xml
